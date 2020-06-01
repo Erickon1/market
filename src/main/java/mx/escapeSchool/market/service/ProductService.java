@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mx.escapeSchool.market.domain.Product;
+import mx.escapeSchool.market.domain.TypeProduct;
 import mx.escapeSchool.market.domain.repository.RProduct;
+import mx.escapeSchool.market.domain.repository.RTypeProduct;
 import mx.escapeSchool.market.dtos.ProductDto;
 import mx.escapeSchool.market.service.interfaces.IProduct;
 
@@ -15,6 +17,9 @@ public class ProductService implements IProduct{
 	
 	@Autowired
 	RProduct rProduct;
+	
+	@Autowired
+	RTypeProduct rTypeProduct;
 
 	@Override
 	public Product get(Long id) {
@@ -30,6 +35,12 @@ public class ProductService implements IProduct{
 		Product product = new Product();
 		product.setName( dto.getName() );
 		product.setCost( dto.getCost() );
+		Optional<TypeProduct> typeProductOptional =
+				rTypeProduct.findById(dto.getTypeId());
+		if (typeProductOptional.isPresent()) {
+			product.setTypeProduct( 
+					typeProductOptional.get() );	
+		}		
 		rProduct.save(product);
 		return product;
 	}

@@ -8,17 +8,31 @@ public class ProductDto {
 	private Long id;
 	private String name;
 	private BigDecimal cost;
+	private Integer typeId;
 	
 	public ProductDto() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ProductDto(Long id, String name, BigDecimal cost) {
+
+	public ProductDto(Long id, String name, BigDecimal cost, Integer typeId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.cost = cost;
+		this.typeId = typeId;
 	}
+
+
+	public Integer getTypeId() {
+		return typeId;
+	}
+
+
+	public void setTypeId(Integer typeId) {
+		this.typeId = typeId;
+	}
+
 
 	public String getName() {
 		return name;
