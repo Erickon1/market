@@ -1,0 +1,21 @@
+databaseChangeLog:
+- changeSet:
+    id: type_product
+    author: erick.mercado
+    changes:
+    - createTable:
+        tableName: type_product
+        columns:
+        - column:
+            name: id
+            type: INT
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: name
+            type: java.sql.Types.VARCHAR(255)
+            constraints:
+              unique: true
+              nullable: false
