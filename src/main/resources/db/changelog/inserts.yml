@@ -4,4 +4,4 @@ databaseChangeLog:
     author: erick.mercado
     changes:
       - sql:
-          sql: insert into type_product(name) values("fruta"),("verdura")
+          sql: insert into type_product(name) values('fruta'),('verdura')
