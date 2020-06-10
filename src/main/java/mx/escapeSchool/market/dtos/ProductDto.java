@@ -2,7 +2,9 @@ package mx.escapeSchool.market.dtos;
 
 import java.math.BigDecimal;
 
+import lombok.ToString;
 
+@ToString(includeFieldNames = true)
 public class ProductDto {
 
 	private Long id;

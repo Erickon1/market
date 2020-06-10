@@ -10,7 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.ToString;
 
+@ToString(of = {"id","name"},
+	includeFieldNames = true)
 @Entity
 @Table(name = "type_product")
 public class TypeProduct {
