@@ -36,9 +36,9 @@
     <!-- LOG everything at INFO level -->
     <root level="info">
         <appender-ref ref="RollingFile" />
-        <!-- QUITA LOG DE CONSOLA 
+
         <appender-ref ref="Console" />
-        -->
+
     </root>
  
 </configuration>
