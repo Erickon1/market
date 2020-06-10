@@ -1,0 +1,7 @@
+databaseChangeLog:
+- changeSet:
+    id: insert
+    author: erick.mercado
+    changes:
+      - sql:
+          sql: insert into type_product(name) values("fruta"),("verdura")
